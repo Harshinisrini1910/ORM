@@ -28,7 +28,7 @@ Include your code here
 
 ## OUTPUT
 
-Include the screenshot of your admin page.
+![Uploading Screenshot 2024-04-17 at 9.05.29 AM.png…]()
 
 
 ## RESULT
