@@ -1,12 +1,12 @@
 # Ex02 Django ORM Web Application
-## Date: 
+## Date: 16/04/2024
 
 ## AIM
 To develop a Django application to store and retrieve data from a Book database using Object Relational Mapping(ORM).
 
 ## Entity Relationship Diagram
+![image](https://github.com/Harshinisrini1910/ORM/assets/161415847/2a2b07ce-9e61-4cdb-bf97-e1ca7d306787)
 
-Include your ER diagram here
 
 ## DESIGN STEPS
 
@@ -24,32 +24,30 @@ Execute Django admin and create details for 10 books
 
 ## PROGRAM
 ```
-admin.py
-
-from django.contrib import admin
-from .models import Book,BookAdmin
-admin.site.register(Book,BookAdmin)
-
 models.py
 
 from django.db import models
 from django.contrib import admin
-class Book(models.Model):
-   serialno=models.IntegerField(primary_key=True);
-   Bookname=models.CharField(max_length=30);
-   Author=models.CharField(max_length=20);
-   publishedDate=models.DateField();
-   Booktype=models.CharField(max_length=20);
-class BookAdmin(admin.ModelAdmin):
-   list_display=("serialno","Bookname","Author","publishedDate","Booktype");
+class Books(models.Model):
+	bookno         = models.IntegerField(primary_key=True);
+	bookname       = models.CharField(max_length=20);
+	author         = models.CharField(max_length=20);
+	pages          = models.IntegerField();
+	published_date = models.DateField();
+	bookprice      = models.IntegerField();
+class BooksAdmin(admin.ModelAdmin):
+	list_display=("bookno","bookname","author","pages","published_date","bookprice");
+
+admin.py
+	
+from django.contrib import admin
+from.models import Books,BooksAdmin
+admin.site.register(Books,BooksAdmin)
 ```
 
-
-
-
 ## OUTPUT
-![Screenshot 2024-04-08 at 11 02 21 AM](https://github.com/Harshinisrini1910/ORM/assets/161415847/0c74c1d6-861e-49cb-a0e9-c78d8e08b2b5)
 
+![image](https://github.com/Harshinisrini1910/ORM/assets/161415847/7e54630d-8e4d-4fd4-b683-1021321031b8)
 
 
 
